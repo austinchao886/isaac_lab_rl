@@ -1,0 +1,38 @@
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pkl
+
+# Logs and checkpoints
+logs/
+*.log
+*.out
+*.err
+*.pth
+*.pt
+
+# Virtual environments
+.env/
+.venv/
+env/
+venv/
+*.egg-info/
+.eggs/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# VSCode / IDE settings
+.vscode/
+.idea/
+
+# Isaac Sim / Isaac Lab temp files
+*_isaac_temp/
+*_build/
+cache/
