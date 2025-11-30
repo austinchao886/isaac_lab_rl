@@ -1,0 +1,6 @@
+export CARB_APP_PATH=/isaac-sim/kit
+export ISAAC_PATH=/isaac-sim
+export EXP_PATH=/isaac-sim/apps 
+source /isaac-sim/setup_python_env.sh
+
+./python.sh /isaac-sim/standalone_examples/tutorials/getting_started_robot.py

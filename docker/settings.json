@@ -1,0 +1,17 @@
+{
+    // @note here goes more python paths
+    "python.analysis.extraPaths": [
+        "/isaac-lab/source/isaaclab",
+        "/isaac-lab/source/isaaclab_assets",
+        "/isaac-lab/source/isaaclab_mimic",
+        "/isaac-lab/source/isaaclab_rl",
+        "/isaac-lab/source/isaaclab_tasks",
+        "/isaac-sim/exts/isaacsim.core.utils",
+        "/isaac-sim/kit/python/lib/python3.10/site-packages"
+    ],
+    "python.analysis.autoSearchPaths": false,
+    "editor.defaultFormatter": "ms-python.autopep8",
+    "python.defaultInterpreterPath": "/opt/conda/envs/isaac-sim/bin/python",
+    "files.autoSave": "afterDelay",
+    "editor.codeActionsOnSave": {}
+}

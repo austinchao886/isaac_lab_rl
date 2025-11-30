@@ -1,15 +1,3 @@
-# Copyright (c) 2022-2025, The Isaac Lab Project Developers
-# All rights reserved.
-# SPDX-License-Identifier: BSD-3-Clause
-
-"""
-Scene configuration for custom robot dog RL training.
-Defines terrain, sensors, lighting, and robot setup.
-"""
-
-# -----------------------------------------------------------------------------
-# Imports
-# -----------------------------------------------------------------------------
 import math
 from dataclasses import MISSING
 
@@ -41,9 +29,7 @@ import isaaclab_tasks.manager_based.locomotion.velocity.mdp as mdp
 # Robot configuration
 from dog.configs.robot_cfg import ANYMAL_C_CFG
 
-# -----------------------------------------------------------------------------
-# Scene Configuration
-# -----------------------------------------------------------------------------
+
 @configclass
 class DogSceneCfg(InteractiveSceneCfg):
     """Configuration for robot dog scene used in RL training."""
@@ -112,7 +98,4 @@ class DogSceneCfg(InteractiveSceneCfg):
     replicate_physics = True
 
 
-# -----------------------------------------------------------------------------
-# Export config instance
-# -----------------------------------------------------------------------------
 SCENE_CFG = DogSceneCfg()

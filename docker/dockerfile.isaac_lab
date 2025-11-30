@@ -1,0 +1,24 @@
+FROM nvcr.io/nvidia/isaac-sim:4.5.0
+
+# Additional dependencies
+RUN set -ex && apt-get update && \
+    apt-get install -y --no-install-recommends --no-install-suggests \
+    git \
+    byobu \
+    x11-apps \
+    cmake \
+    build-essential
+    
+# Source Isaac-sim 
+RUN echo "source /isaac-sim/setup_conda_env.sh" >> /root/.bashrc
+
+# Install Isaac-lab
+RUN set -ex && \
+    git clone https://github.com/isaac-sim/IsaacLab.git /isaac-lab
+
+WORKDIR /isaac-lab
+# # # Creating the Isaac Sim Symbolic Link
+RUN set -ex && bash -c "ln -s /isaac-sim/ /isaac-lab/_isaac_sim"
+
+# Install isaac-lab dependecies
+RUN TERM=xterm ./isaaclab.sh -i

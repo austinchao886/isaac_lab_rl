@@ -1,18 +1,3 @@
-# Copyright (c) 2022-2025, The Isaac Lab Project Developers
-# All rights reserved.
-# SPDX-License-Identifier: BSD-3-Clause
-
-"""
-Environment configuration for custom robot dog RL training.
-Defines episode length, robot, scene, reward scales, and managers.
-Can be run directly to launch and test the simulation.
-"""
-
-
-
-
-"""Rest everything follows."""
-
 import math
 from dataclasses import MISSING
 import torch
@@ -68,7 +53,6 @@ class CommandsCfg:
 @configclass
 class ActionsCfg:
     """Action specifications for the MDP."""
-
     joint_pos = mdp.JointPositionActionCfg(asset_name="robot", joint_names=[".*"], scale=0.5, use_default_offset=True)
 
 # Observations manager
@@ -282,65 +266,7 @@ class DogWalkEnvCfg(ManagerBasedRLEnvCfg):
 		else:
 			if self.scene.terrain.terrain_generator is not None:
 				self.scene.terrain.terrain_generator.curriculum = False
-
-
-# def main():
-# 	# Create environment config
-# 	env_cfg = DogWalkEnvCfg()
-# 	env_cfg.scene.num_envs = args_cli.num_envs
-# 	env_cfg.sim.device = args_cli.device
-
-# 	# Create RL environment
-# 	env = ManagerBasedRLEnv(cfg=env_cfg)
-
-# 	# Simulation loop
-# 	count = 0
-# 	env.reset()
-# 	while simulation_app.is_running():
-# 		with torch.inference_mode():
-# 			if count % 300 == 0:
-# 				count = 0
-# 				env.reset()
-# 				print("-" * 80)
-# 				print("[INFO]: Resetting environment...")
-# 			# Sample random actions
-# 			actions = torch.randn_like(env.action_manager.action)
-# 			# obs= env.step(actions)
-# 			# print("[Env 0]: Observation: ", obs)
-# 			# Step the environment
-# 			obs, rewards, dones, truncated, info = env.step(actions)
-
-# 			print("[Env 0]: Obs:", obs["policy"][0][1].item())        
-# 			count += 1
-
-# 	env.close()
 	
 
 
-if __name__ == "__main__":
-    import argparse
-    from isaaclab.app import AppLauncher
-
-    # add argparse arguments
-    parser = argparse.ArgumentParser(description="Tutorial on creating a cartpole base environment.")
-    parser.add_argument("--num_envs", type=int, default=16, help="Number of environments to spawn.")
-
-    # append AppLauncher cli args
-    AppLauncher.add_app_launcher_args(parser)
-    # parse the arguments
-    args_cli = parser.parse_args()
-
-    # launch omniverse app
-    app_launcher = AppLauncher(args_cli)
-    simulation_app = app_launcher.app
-
-    # build env
-    env_cfg = DogWalkEnvCfg()
-    env_cfg.scene.num_envs = args_cli.num_envs
-    env = ManagerBasedRLEnv(cfg=env_cfg)
-
-    obs, info = env.reset()
-
-    env.close()
-    simulation_app.close()
 
