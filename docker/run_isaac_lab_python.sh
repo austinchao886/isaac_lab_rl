@@ -18,8 +18,8 @@ docker run -dit --rm \
     -v ~/docker/isaac-sim/logs:/root/.nvidia-omniverse/logs:rw \
     -v ~/docker/isaac-sim/data:/root/.local/share/ov/data:rw \
     -v ~/docker/isaac-sim/documents:/root/Documents:rw \
-    -v /home/austin/Documents/panda_ws/isaac_panda_ws/workspace:/workspace \
-    -w /workspace \
+    -v /home/austin/Documents/rl_dog_ws/scripts:/scripts \
+    -w /scripts \
     --name isaac-lab \
     isaac_lab:dev
     # nvcr.io/nvidia/isaac-sim:4.5.0

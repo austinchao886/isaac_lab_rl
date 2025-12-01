@@ -21,9 +21,6 @@ from isaaclab.utils.noise import AdditiveUniformNoiseCfg as Unoise
 
 import isaaclab_tasks.manager_based.locomotion.velocity.mdp as mdp
 
-# import pdb
-# pdb.set_trace()
-# Import robot and scene configs
 from dog.configs.robot_cfg import ANYMAL_C_CFG
 from dog.configs.scene_cfg import SCENE_CFG
 
