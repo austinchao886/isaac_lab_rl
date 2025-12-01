@@ -1,6 +1,6 @@
-# Isaac Lab RL Training
+# 🚀 Isaac Lab RL Training
 
-## Brief Introduction
+## 📝 Brief Introduction
 
 This repository contains a reinforcement learning (RL) training framework for the ANYmal quadruped robot using Isaac Lab. The project demonstrates a structured approach to RL training with the following key characteristics:
 
@@ -11,7 +11,7 @@ This repository contains a reinforcement learning (RL) training framework for th
 
 The repository is organized to provide a clean separation between environment configuration, agent setup, and training scripts, making it easy to modify and extend for different RL tasks. All training and testing are performed within a Docker container to ensure consistent execution across different systems.
 
-## Repository Structure
+## ⚒️ Repository Structure
 
 This project uses the **ManagerBasedRL** training environment configuration from Isaac Lab. All core training code is located in the `scripts/` directory, which contains two main components:
 
@@ -24,7 +24,7 @@ This directory contains all configurations for the ManagerBasedRL environment, i
 - Robot configuration
 - Scene setup and observation/action spaces
 
-## Training and Inference Scripts
+## 🖋️ Training and Inference Scripts
 
 ### `train.py` - Policy Training
 This script handles the training of the RL policy. Key features include:
@@ -48,7 +48,7 @@ This script performs inference using trained policies. The key parameter is:
   ```
   The script will load the trained model from the specified directory and run inference in the simulation environment.
 
-## Visualization
+## 👁️ Visualization
 
 ### TensorBoard
 To visualize training metrics and progress, use the provided `tensorboard.sh` script:
